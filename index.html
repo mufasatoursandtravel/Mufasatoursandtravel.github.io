@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mufasa Tours and Travel | Tours & Travel</title>
+<meta name="description" content="Mufasa Tours and Travel Tours & Travel — unforgettable African safaris, beach escapes and tailor-made journeys.">
+<style>
+:root{--ink:#17352d;--green:#1f5a48;--gold:#d89b35;--cream:#f7f2e8;--white:#fff;--muted:#6c746f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:24px 6%;color:white}
+.logo{font-weight:900;font-size:1.25rem;letter-spacing:.5px}.logo span{color:#f4c66c}
+.navlinks{display:flex;gap:28px;font-size:.95rem}.navlinks a:hover{color:#f4c66c}
+.menu{display:none;background:none;border:0;color:#fff;font-size:1.5rem}
+.hero{min-height:90vh;display:grid;place-items:center;text-align:center;color:white;padding:100px 6% 70px;
+background:linear-gradient(90deg,rgba(8,31,25,.76),rgba(8,31,25,.25)),url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1800&q=85") center/cover}
+.hero-inner{max-width:850px}.eyebrow{color:#f4c66c;font-weight:800;text-transform:uppercase;letter-spacing:3px;font-size:.8rem}
+h1{font-size:clamp(3rem,7vw,6.5rem);line-height:.95;margin:18px 0 24px}
+.hero p{font-size:1.15rem;max-width:680px;margin:0 auto 32px;color:#f3f5f2}
+.btn{display:inline-block;background:var(--gold);color:#17261f;padding:14px 24px;border-radius:999px;font-weight:800;border:0;cursor:pointer}.btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn.alt{background:transparent;border:1px solid rgba(255,255,255,.65);color:#fff;margin-left:10px}
+section{padding:90px 6%}.intro{text-align:center;max-width:760px;margin:0 auto 45px}.intro h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.05;margin:10px 0 14px}.intro p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin:auto}
+.card{border-radius:20px;overflow:hidden;background:white;box-shadow:0 12px 35px rgba(20,40,32,.09);transition:.25s}.card:hover{transform:translateY(-5px)}
+.card-img{height:250px;background-size:cover;background-position:center}.card-body{padding:24px}.tag{font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);font-weight:900}.card h3{font-size:1.45rem;margin:7px 0}.card p{color:var(--muted);font-size:.95rem}.price{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-weight:900}.price span{color:var(--gold)}
+.cream{background:var(--cream)}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1200px;margin:auto}.feature{padding:28px;border:1px solid #e6dfd1;border-radius:18px;background:rgba(255,255,255,.55)}.icon{font-size:2rem}.feature h3{margin:10px 0 5px}.feature p{color:var(--muted);font-size:.9rem}
+.split{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.split-img{min-height:500px;border-radius:28px;background:url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=85") center/cover}.split h2{font-size:clamp(2.2rem,4vw,4rem);line-height:1.05;margin:12px 0 20px}.checks{list-style:none;margin:25px 0}.checks li{margin:12px 0}.checks li:before{content:"✓";display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#e5f0e9;color:var(--green);font-weight:900;margin-right:10px}
+.testimonials{background:var(--green);color:#fff}.testimonials .intro p{color:#d9e5df}.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:auto}.quote{background:rgba(255,255,255,.08);padding:28px;border-radius:20px}.quote p{font-size:1.02rem}.quote b{display:block;margin-top:20px;color:#f4c66c}
+.contact{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:30px}.contact-box{background:var(--cream);padding:30px;border-radius:22px}.contact-box h3{font-size:1.5rem;margin-bottom:12px}.contact-box p{color:var(--muted);margin:8px 0}.form{display:grid;gap:12px}.form input,.form textarea,.form select{width:100%;padding:14px 15px;border:1px solid #ddd8ce;border-radius:12px;background:#fff;font:inherit}.form textarea{min-height:120px;resize:vertical}
+footer{background:#102a22;color:#dce6e1;padding:50px 6%;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer-brand{max-width:400px}.footer-brand p{margin-top:10px;color:#aebeb7}.copyright{width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:18px;margin-top:20px;color:#8fa39a;font-size:.85rem}
+#toast{position:fixed;right:20px;bottom:20px;background:#17352d;color:#fff;padding:15px 20px;border-radius:12px;display:none;z-index:20;box-shadow:0 10px 30px #0003}
+@media(max-width:800px){.navlinks{display:none}.menu{display:block}.navlinks.open{display:flex;position:absolute;top:70px;left:5%;right:5%;padding:20px;background:#17352d;border-radius:15px;flex-direction:column;gap:14px}.cards,.quotes,.features{grid-template-columns:1fr}.split,.contact{grid-template-columns:1fr}.split-img{min-height:350px}.btn.alt{margin-left:0;margin-top:10px}section{padding:70px 5%}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#home">MUFASA <span>TOURS AND TRAVEL</span></a>
+  <button class="menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+  <div class="navlinks">
+    <a href="#tours">Tours</a><a href="#why">Why us</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow">DISCOVER KENYA & BEYOND</div>
+    <h1>YOUR JOURNEY.<br>OUR EXPERTISE.</h1>
+    <p>Unforgettable safaris, beach escapes and tailor-made adventures across Kenya, East Africa and beyond — planned around you.</p>
+    <a class="btn" href="#tours">Explore journeys</a>
+    <a class="btn alt" href="#contact">Plan my trip</a>
+  </div>
+</header>
+
+<section id="tours">
+  <div class="intro"><div class="eyebrow">Featured journeys</div><h2>Explore unforgettable destinations</h2><p>From Kenya's iconic wildlife reserves to the Indian Ocean coast, choose a package or let us create a trip around your budget and travel style.</p></div>
+  <div class="cards">
+    <article class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80')"></div><div class="card-body"><span class="tag">Kenya • Safari</span><h3>Masai Mara Safari</h3><p>Experience the Big Five, breathtaking landscapes and unforgettable game drives in Kenya's world-famous Maasai Mara.</p><div class="price"><span>From KSh 25,000</span><a href="#contact">Book →</a></div></div></article>
+    <article class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80')"></div><div class="card-body"><span class="tag">Tanzania • Adventure</span><h3>Tanzania Safari & Zanzibar</h3><p>Combine an exciting Serengeti safari with relaxing days on the beautiful beaches of Zanzibar.</p><div class="price"><span>From KSh 95,000</span><a href="#contact">Book →</a></div></div></article>
+    <article class="card"><div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80')"></div><div class="card-body"><span class="tag">Kenya • Beach</span><h3>Diani Beach Holiday</h3><p>Relax on Kenya's stunning south coast with white-sand beaches, warm ocean waters and optional coastal excursions.</p><div class="price"><span>From KSh 18,000</span><a href="#contact">Book →</a></div></div></article>
+  </div>
+</section>
+
+<section class="cream" id="why">
+  <div class="intro"><div class="eyebrow">The Mufasa promise</div><h2>Your trip should feel effortless.</h2><p>We handle the planning and details so you can focus on enjoying every moment of your journey.</p></div>
+  <div class="features">
+    <div class="feature"><div class="icon">🧭</div><h3>Local expertise</h3><p>Practical itineraries designed around destinations we know and love.</p></div>
+    <div class="feature"><div class="icon">✨</div><h3>Tailor-made trips</h3><p>Private safaris, family holidays, honeymoons and group adventures built around you.</p></div>
+    <div class="feature"><div class="icon">🛡️</div><h3>Reliable travel support</h3><p>Clear communication, trusted travel partners and support before and during your trip.</p></div>
+    <div class="feature"><div class="icon">🌍</div><h3>Memorable experiences</h3><p>Wildlife, culture, beaches and experiences you'll be talking about long after you return.</p></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="split">
+    <div class="split-img"></div>
+    <div><div class="eyebrow">About Mufasa Tours and Travel</div><h2>We turn travel dreams into memorable journeys.</h2><p>Mufasa Tours and Travel is a Kenya-based travel company helping individuals, families, couples and groups discover Kenya and East Africa. Tell us where you want to go, and we'll help plan the journey from start to finish.</p>
+      <ul class="checks"><li>Tailor-made itineraries</li><li>Airport transfers & accommodation</li><li>Safari, beach and cultural experiences</li><li>Friendly support from booking to return</li></ul>
+      <a class="btn" href="#contact">Talk to a travel expert</a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="reviews">
+  <div class="intro"><div class="eyebrow">Happy travellers</div><h2>What our travellers say</h2><p>Sample testimonials — replace these with your real clients' reviews as your business grows.</p></div>
+  <div class="quotes">
+    <div class="quote"><p>“Every detail was handled beautifully. The safari was beyond anything we imagined.”</p><b>— Grace, Nairobi</b></div>
+    <div class="quote"><p>“From the airport pickup to our last sunset in Diani, everything felt effortless.”</p><b>— Brian & Faith</b></div>
+    <div class="quote"><p>“The perfect mix of adventure and relaxation. We are already planning our next trip.”</p><b>— Kevin, Nairobi</b></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="intro"><div class="eyebrow">Start planning</div><h2>Let's plan your next adventure.</h2><p>Tell us what you're looking for and we'll get back to you with ideas and a personalised quotation.</p></div>
+  <div class="contact">
+    <div class="contact-box"><h3>Let's plan your trip</h3><p>📞 <a href="tel:0740328675">0740328675</a></p><p>💬 <a href="https://wa.me/254740328675" target="_blank">WhatsApp: 0740328675</a></p><p>✉️ mufasatours@gmail.com</p><p>📍 Nairobi, Kenya</p><p style="margin-top:20px">We arrange private trips, group tours, honeymoons, family holidays, corporate travel and custom itineraries.</p></div>
+    <form class="contact-box form" onsubmit="sendForm(event)">
+      <input required placeholder="Your name">
+      <input required type="email" placeholder="Email address">
+      <select><option>What are you interested in?</option><option>Kenya safari</option><option>Beach holiday</option><option>Tanzania / Zanzibar</option><option>Airport transfer</option><option>Hotel & flight assistance</option><option>Custom itinerary</option></select>
+      <textarea placeholder="Tell us about your dream trip, preferred dates and number of travellers..."></textarea>
+      <button class="btn" type="submit">Send enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><div class="logo">MUFASA <span>TOURS AND TRAVEL</span></div><p>Kenya, East Africa and beyond. Memorable journeys made for you.</p></div>
+  <div>Instagram &nbsp; • &nbsp; Facebook &nbsp; • &nbsp; WhatsApp: 0740328675</div>
+  <div class="copyright">© 2026 Mufasa Tours and Travel Tours & Travel. Demo website — replace contact details, prices and imagery before launch.</div>
+</footer>
+<div id="toast">Thanks! Your enquiry has been received in this demo. 🎉</div>
+<script>
+function sendForm(e){e.preventDefault();const t=document.getElementById('toast');t.style.display='block';e.target.reset();setTimeout(()=>t.style.display='none',3500)}
+</script>
+</body>
+</html>
